@@ -63,23 +63,9 @@ public class GetTwitterData
 			e.printStackTrace();
 		}
     }
-    /*
-    public OAuthConsumer GetConsumer()
-    {
-        OAuthConsumer consumer = new DefaultOAuthConsumer(PartTWO.utils.OAuthUtils.CONSUMER_KEY1,PartTWO.utils.OAuthUtils.CONSUMER_SECRET1);
-        consumer.setTokenWithSecret(OAuthTokens.getAccessToken(),OAuthTokens.getAccessSecret());
-        return consumer;
-    }
-    public void LoadTwitterToken()
-    {
-        OAuthTokens = OAuthExample.DEBUGUserAccessSecret();
-    }
-*/
+    
     public String fetchData(String last_mapped)
     {
-        //RESTApiExample rae = new RESTApiExample();
-        //rae.LoadTwitterToken();
-        //rae.Consumer = rae.GetConsumer();
         /**** for every id_str read from the file do the following ***/   
         PrintStream out=null;
         String mapping_number=null;
@@ -136,19 +122,14 @@ public class GetTwitterData
       	  //out.close();
       	  System.out.println("Web crawling ended for current Thread");
         }
-        //return mapping_number;
-        //New fetch
         return id.toString();
         
    }
      
-    //public void countMentions(String mapping_number,String user_id,String mentioned_user) 
 	public static void countMentions(LinkedList<Node> RF,Node item)
     {
         try {
 			
-			//Node item=new Node(mapping_number,user_id,mentioned_user,1);
-			//System.out.println("contains item? "+ L.contains(item));
 			if(RF.contains(item))
 			{
 				int indexOfItem=RF.indexOf(item);
@@ -311,8 +292,7 @@ public class GetTwitterData
 						followers_count=user.get("followers_count").toString();
 						friends_count=user.get("friends_count").toString();
 						System.out.println("user id: "+ user_id);
-						//String tweet = c.getJSONObject(i).get("text").toString();
-						//System.out.println("tweet "+ i + "is "+ tweet);
+
 						numberOfPosts=user.get("statuses_count").toString();
 						
 						
@@ -346,12 +326,7 @@ public class GetTwitterData
 								countMentions(RF,item);
 
 							}
-							if(empty)
-							{	/*
-								Node item=new Node(mapping_number,user_id,"-1",0);
-								countMentions(RF,item);
-								*/
-							}
+							
 					}//end of for
 					if(loopcount==0 && IntNumberOfPosts>MAX_TWEETS)
 						{
@@ -486,8 +461,6 @@ public class GetTwitterData
 	    	in.close();
 	    	System.out.println("Length of Output\n" + html.length());
 	    	System.out.println("URL Content... \n" + html.toString());
-	    	//Node item=new Node(mapping_number,id_str,"-1",0);
-	    	//L.addLast(item);
 	    	JSONObject c = new JSONObject(html.toString());
 	    	String numberOfPosts=c.get("statuses_count").toString();
 	    	String followers_count=c.get("followers_count").toString();
