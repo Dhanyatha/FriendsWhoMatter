@@ -105,15 +105,16 @@ class NewThread extends Thread {
 
 public class MyThreads {
 	public static void main(String args[]) {
-		NewThread.last_mapped_num="74";
+		NewThread.last_mapped_num="12850";
 		PrintStream orgStream = System.out;
 		try {
-			for(int i=2;i<=10;i++) {
+			for(int i=6;i<=10;i++) {
 				final NewThread t = new NewThread(i,NewThread.last_mapped_num); 
 				System.out.println("Thread "+i);
 				t.join();
 				System.setOut(orgStream);
 			}
+			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

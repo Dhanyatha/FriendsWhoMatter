@@ -20,6 +20,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Random;
 
 import oauth.signpost.OAuthConsumer;
 import oauth.signpost.basic.DefaultOAuthConsumer;
@@ -35,7 +36,10 @@ import au.com.bytecode.opencsv.CSVReader;
 
 public class GetTwitterData
 {
-	static final String FILE_PATH="C:\\Users\\Tejas\\workspace\\ProjectMickey\\ProjectMickey\\data\\RUN2\\";
+	static final String FILE_PATH="C:\\Users\\Tejas\\workspace\\ProjectMickey\\data\\RUN3\\";
+	static final Long MAX_TWEETS = new Long(3200);
+	static final Integer HIGH = 100;
+	static final Integer LOW = 10;
     BufferedWriter OutFileWriter;
     OAuthConsumer Consumer;
     OAuthToken OAuthTokens;
@@ -80,9 +84,14 @@ public class GetTwitterData
         PrintStream out=null;
         String mapping_number=null;
         String prev_num=null;
+        
+        //New fetch
+        Long id = (Long.parseLong(last_mapped));
+    	Integer map= 5000;
+        
         try
         {	 
-        	out = new PrintStream(new FileOutputStream(FILE_PATH+"console1.txt", true));
+        	/*out = new PrintStream(new FileOutputStream(FILE_PATH+"console1.txt", true));
         	System.setOut(out);
         	CSVReader reader = new CSVReader(new FileReader(FILE_PATH+"mapping.csv"));
         	String [] nextLine;
@@ -100,18 +109,23 @@ public class GetTwitterData
         			mapping_number=prev_num;
         			break;
         		}
-        		//else if (status == 4291){
-        		//	break;
-        		//}
-        		/*count++;
-        		if(count>1) {
-        			reader.close();
-        			return mapping_number;
-        		}*/
+        		
         	}
         	
         	reader.close();
-        	return mapping_number;
+        	return mapping_number;*/
+        	
+        	 //New fetch
+        	while (true) {
+        		int status = tweetParser(id.toString(),map.toString());
+        		if(status == 429) {
+        			break;
+        		}
+        		Random r = new Random();
+        		int R = r.nextInt(HIGH-LOW) + LOW;
+        		id=id+R;
+        		
+        	}
         }
         catch(Exception e)
         {
@@ -122,7 +136,9 @@ public class GetTwitterData
       	  //out.close();
       	  System.out.println("Web crawling ended for current Thread");
         }
-        return mapping_number;
+        //return mapping_number;
+        //New fetch
+        return id.toString();
         
    }
      
@@ -252,7 +268,7 @@ public class GetTwitterData
 		String numberOfPosts=null;
 		String followers_count=null;
 		String friends_count=null;
-		int IntNumberOfPosts=0;
+		Long IntNumberOfPosts=new Long(0);
 		int loopcount=0;
 		int status=0;
 		long max_id=-1;
@@ -267,7 +283,7 @@ public class GetTwitterData
 				if(huc==null)
 				{
 					System.out.println("Connection object NULL: writing -1 to the file for id:"+ id_str);
-					ConnectionObjectNull(RF,PT,id_str,mapping_number);
+					//ConnectionObjectNull(RF,PT,id_str,mapping_number);
 					status = 4500;
 					return status;	
 				}
@@ -298,9 +314,16 @@ public class GetTwitterData
 						//String tweet = c.getJSONObject(i).get("text").toString();
 						//System.out.println("tweet "+ i + "is "+ tweet);
 						numberOfPosts=user.get("statuses_count").toString();
+						
+						
+						//New fetch
+						if (Long.parseLong(numberOfPosts) > MAX_TWEETS || Long.parseLong(followers_count) > 2000 || Long.parseLong(friends_count) > 2000 ) {
+							return status;
+						}
+						
 						if(loopcount==0)
 							{
-							IntNumberOfPosts=(int) user.get("statuses_count");
+							IntNumberOfPosts=new Long((int)user.get("statuses_count"));
 							}
 
 						if(i==c.length()-1)
@@ -330,9 +353,9 @@ public class GetTwitterData
 								*/
 							}
 					}//end of for
-					if(loopcount==0 && IntNumberOfPosts>1000)
+					if(loopcount==0 && IntNumberOfPosts>MAX_TWEETS)
 						{
-							IntNumberOfPosts=1000; 
+							IntNumberOfPosts=MAX_TWEETS; 
 							
 						}
 					loopcount++;
@@ -343,7 +366,7 @@ public class GetTwitterData
 				} //end of else-end of one user`s tweets
 
 				
-			}while(IntNumberOfPosts>0 && IntNumberOfPosts<1000);
+			}while(IntNumberOfPosts>0 && IntNumberOfPosts<MAX_TWEETS);
 			if(flag==false)
 			writeToFile(RF,PT,mapping_number,user_id,numberOfPosts,followers_count,friends_count);
 		}//end of try
@@ -388,7 +411,7 @@ public class GetTwitterData
            	    try
            	    {
                	System.out.println("HTTP 429: Too many requests! Switching to sleep mode");
-                //Thread.sleep(900000);
+                //Thread.sleep(950000);
                 huc.disconnect();    
                 //continue;
                 break;
