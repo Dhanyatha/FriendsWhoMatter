@@ -36,15 +36,13 @@ import au.com.bytecode.opencsv.CSVReader;
 
 public class GetTwitterData
 {
-	static final String FILE_PATH="C:\\Users\\Tejas\\workspace\\ProjectMickey\\data\\RUN3\\";
+	static final String FILE_PATH="F:\\SmmProjectPart2\\Data\\";
 	static final Long MAX_TWEETS = new Long(3200);
-	static final Long HIGH = new Long(100);
-	static final Long LOW = new Long(10);
+	static final int HIGH = 100;
+	static final int LOW = 100;
     BufferedWriter OutFileWriter;
     OAuthConsumer Consumer;
     OAuthToken OAuthTokens;
-    //public static LinkedList<Node> L = new LinkedList<Node>();
-    //public static LinkedList<Post> P = new LinkedList<Post>();
     static FileWriter realFriends;
     static File id_track=new File(FILE_PATH,"realFriends.csv");
     static FileWriter posttracker;
@@ -77,30 +75,6 @@ public class GetTwitterData
         
         try
         {	 
-        	/*out = new PrintStream(new FileOutputStream(FILE_PATH+"console1.txt", true));
-        	System.setOut(out);
-        	CSVReader reader = new CSVReader(new FileReader(FILE_PATH+"mapping.csv"));
-        	String [] nextLine;
-        	Integer count=0;
-        	while ((nextLine = reader.readNext()) != null) {
-        	
-        		if(last_mapped.equals(nextLine[0])) break;
-        	}
-        	while ((nextLine = reader.readNext()) != null){
-        		prev_num=mapping_number;
-        		mapping_number=nextLine[0];
-        		String id_str=nextLine[1];
-        		int status = tweetParser(id_str,mapping_number);
-        		if(status == 429) {
-        			mapping_number=prev_num;
-        			break;
-        		}
-        		
-        	}
-        	
-        	reader.close();
-        	return mapping_number;*/
-        	
         	 //New fetch
         	while (true) {
         		int status = tweetParser(id.toString(),map.toString());
@@ -108,8 +82,8 @@ public class GetTwitterData
         			break;
         		}
         		Random r = new Random();
-        		Long R = r.nextLong(HIGH-LOW) + LOW;
-        		id=id+R;
+        		int R = r.nextInt(HIGH-LOW) + LOW;
+        		id=id+new Long(R);
         		
         	}
         }
