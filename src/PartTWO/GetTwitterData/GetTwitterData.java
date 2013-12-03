@@ -38,8 +38,8 @@ public class GetTwitterData
 {
 	static final String FILE_PATH="C:\\Users\\Tejas\\workspace\\ProjectMickey\\data\\RUN3\\";
 	static final Long MAX_TWEETS = new Long(3200);
-	static final Integer HIGH = 100;
-	static final Integer LOW = 10;
+	static final Long HIGH = new Long(100);
+	static final Long LOW = new Long(10);
     BufferedWriter OutFileWriter;
     OAuthConsumer Consumer;
     OAuthToken OAuthTokens;
@@ -122,7 +122,7 @@ public class GetTwitterData
         			break;
         		}
         		Random r = new Random();
-        		int R = r.nextInt(HIGH-LOW) + LOW;
+        		Long R = r.nextLong(HIGH-LOW) + LOW;
         		id=id+R;
         		
         	}
