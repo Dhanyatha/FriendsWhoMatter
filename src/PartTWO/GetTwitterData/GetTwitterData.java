@@ -38,8 +38,8 @@ public class GetTwitterData
 {
 	static final String FILE_PATH="F:\\SmmProjectPart2\\Data\\";
 	static final Long MAX_TWEETS = new Long(3200);
-	static final int HIGH = 100;
-	static final int LOW = 100;
+	private static final int HIGH = 30;
+	private static final int LOW = 10;
     BufferedWriter OutFileWriter;
     OAuthConsumer Consumer;
     OAuthToken OAuthTokens;

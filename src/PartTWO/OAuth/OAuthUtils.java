@@ -6,34 +6,49 @@ public class OAuthUtils
 	public static final String AUTHORIZE_URL = "https://api.twitter.com/oauth/authorize";
 	public static final String ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token";
 		    
-    public static final String CONSUMER_SECRET1 = "ubYOj1vcqT7c70TcbfHAR8Cx4HcXd8T4zZBUqiOWw";
-    public static final String CONSUMER_KEY1 = "YWkW9wOUuj4IWzqRiAaCg";
+    public static final String CONSUMER_SECRET1 = "67M9KppNTeu3XfdIaoE7dFrmCx1ap01YjasRVL7CnM";
+    public static final String CONSUMER_KEY1 = "vmQM5ftqraFK615x8tFBg";
    
-    public static final String CONSUMER_SECRET2 = "dMNjWGPt5hXEiEiBB47KSG1VvomWmVdp9NqfgUfY";
-    public static final String CONSUMER_KEY2 = "B1rS1iGl97T3W6PbpCn6Q";
+    public static final String CONSUMER_SECRET2 = "duodwYToScDwUFlXnUJ8764ZBlZ1QCXoArH8mr9iyY";
+    public static final String CONSUMER_KEY2 = "C0lTt4UtcaXOTgytahRA";
  
-    public static final String CONSUMER_SECRET3 = "gRDxYMWsAvjer7Eev1T9oZ4k57Ta00U1xGkLPXggL8";
-    public static final String CONSUMER_KEY3 = "JPIPngbH5gM9ihuNxVPM7A";
+    public static final String CONSUMER_SECRET3 = "9zekGCcc7ByLBWqp42DblkMqX7LrLLqJa97s31Ifco8";
+    public static final String CONSUMER_KEY3 = "ORCTqMxSBVqj12qryMzY7A";
   
-    public static final String CONSUMER_SECRET4 = "x3CS5SUah5uVGjanayZM4UB8pbQWEAKOesUjkCzYbM";
-    public static final String CONSUMER_KEY4 = "gvyIzrqy8fzkDY0sy8aNw";
+    public static final String CONSUMER_SECRET4 = "s6PgwYLS2QThBHaDkDlHas8JIMjV1fdFWizmMX0rk";
+    public static final String CONSUMER_KEY4 = "U5AwQjYPNvj7ukAdnFOXJQ";
     
-    public static final String CONSUMER_SECRET5 = "4dCsnFAD1cF09vSa3iZnfqgwWm3YqPyuKMrnpayFDx0";
-    public static final String CONSUMER_KEY5 = "tuHguNlL5uzNM5Xsnm32w";
+    public static final String CONSUMER_SECRET5 = "lC7nvDd8Bu8Jp1A0isvOOaEOQ7GlxXlDbFlWZlUtICU";
+    public static final String CONSUMER_KEY5 = "dWumFWUaKYeVQKOyGO3Z0A";
    
-    public static final String CONSUMER_SECRET6 = "iBYKj20ZzF3YyZhYzAAR5VT5L1K2WqbikQ0s4876Vzk";
-    public static final String CONSUMER_KEY6 = "W48spriNoSwNxXZgkYUDg";
+    public static final String CONSUMER_SECRET6 = "zjlvGikKlwThfA5YsWQoTpX1OU6KL8pw9xeDUnGy6IM";
+    public static final String CONSUMER_KEY6 = "vcqDfzNG2XGZf4OA2NYQ";
     
-    public static final String CONSUMER_SECRET7 = "Q8kCB3Ox82jTr0NzHoQZ7m5XjzCZECdFRFbWpEqNhY";
-    public static final String CONSUMER_KEY7 = "U0oaRDvOvySOyDkqIhjxQ";
+    public static final String CONSUMER_SECRET7 = "1XwU0djyARq7VU33lTsNCMTKA9m6uY4zSNgVH7Hdew";
+    public static final String CONSUMER_KEY7 = "Fe3yKPiaKjLdgT4TUVcuaw";
     
-    public static final String CONSUMER_SECRET8 = "yAf7LogzFis4pBRp4TxVr6KPWjPB8NI6JaEO9YPzlG8";
-    public static final String CONSUMER_KEY8 = "hpQK7rTZtxbmeS0yy3ZGrQ";
+    public static final String CONSUMER_SECRET8 = "EzUVghun0WhjoHjxvmbflxqTLSi8PBkVeGjW2fGv580";
+    public static final String CONSUMER_KEY8 = "LPC2eseSudZGgocWUmgxWw";
     
-    public static final String CONSUMER_SECRET9 = "Vz44NbM4JxrYYhrCVHXFXqD2zTVhbvxZ5hWlhoOo9Q";
-    public static final String CONSUMER_KEY9 = "PQ0H6PuDw8ESgzeiVZA4gA";
+    public static final String CONSUMER_SECRET9 = "SNTrkX44ZuS2aDhWEkwTtiK5hiDzKFuv4qMkLVbh8";
+    public static final String CONSUMER_KEY9 = "2rlZCkcyBFJ3JcooKb0jQ";
     
-    public static final String CONSUMER_SECRET10 = "hjD0S7CR7oNak9TLIXtfKlHJrzSYAvipV5aTVHzKRg";
-    public static final String CONSUMER_KEY10 = "WO0gOAgV0s4Wvm4KMeVs3A";
+    public static final String CONSUMER_SECRET10 = "6ZwZ5JYyd5UtkKjXqghWyKqJsOUcFCpWzItEyvLMxU";
+    public static final String CONSUMER_KEY10 = "ku3ftA8bbd0t2T1WD78pQ";
+    
+/*    public static final String CONSUMER_SECRET11 = "";
+    public static final String CONSUMER_KEY11 = "";
+    
+    public static final String CONSUMER_SECRET12 = "";
+    public static final String CONSUMER_KEY12 = "";
+    
+    public static final String CONSUMER_SECRET13 = "";
+    public static final String CONSUMER_KEY13 = "";
+    
+    public static final String CONSUMER_SECRET14 = "";
+    public static final String CONSUMER_KEY14 = "";
+    
+    public static final String CONSUMER_SECRET15 = "";
+    public static final String CONSUMER_KEY15 = "";*/
    
 }
