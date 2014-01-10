@@ -182,40 +182,7 @@ public class GetTwitterData
 		realFriends.close();
 	}
 
-	public void ConnectionObjectNull(LinkedList<Node> RF, LinkedList<Post> PT, String user_id,String mapping_number) throws IOException 
-	{
-		realFriends= new FileWriter(id_track,true);	
-		Post element=new Post(mapping_number,user_id,"-2","-2","-2",-2);
-		/*Node item=new Node(mapping_number,user_id,"-2",-2);
-		RF.addLast(item);
-		realFriends.append(mapping_number);
-		realFriends.append(',');
-		realFriends.append(user_id);
-		realFriends.append(',');
-		realFriends.append("-2");
-		realFriends.append(',');
-		realFriends.append("-2");
-		realFriends.append('\n');*/
-		
-		PT.addLast(element);
-		posttracker= new FileWriter(post_track,true);	
-		posttracker.append(mapping_number);
-		posttracker.append(',');
-		posttracker.append(user_id);
-		posttracker.append(',');
-		posttracker.append("-2");
-		posttracker.append(',');
-		posttracker.append("-2");
-		posttracker.append(',');
-		posttracker.append("-2");
-		posttracker.append(',');
-		posttracker.append("-2");
-		posttracker.append('\n');
-		posttracker.flush();
-		posttracker.close();
-		realFriends.flush();
-		realFriends.close();
-	}
+	
 	public int tweetParser(String id_str,String mapping_number)
 	{
 		JSONArray c= null;
@@ -238,7 +205,7 @@ public class GetTwitterData
 				if(huc==null)
 				{
 					System.out.println("Connection object NULL: writing -1 to the file for id:"+ id_str);
-					//ConnectionObjectNull(RF,PT,id_str,mapping_number);
+					
 					status = 4500;
 					return status;	
 				}

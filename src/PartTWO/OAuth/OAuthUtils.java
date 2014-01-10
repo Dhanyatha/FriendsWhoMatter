@@ -35,20 +35,6 @@ public class OAuthUtils
     
     public static final String CONSUMER_SECRET10 = "6ZwZ5JYyd5UtkKjXqghWyKqJsOUcFCpWzItEyvLMxU";
     public static final String CONSUMER_KEY10 = "ku3ftA8bbd0t2T1WD78pQ";
-    
-/*    public static final String CONSUMER_SECRET11 = "";
-    public static final String CONSUMER_KEY11 = "";
-    
-    public static final String CONSUMER_SECRET12 = "";
-    public static final String CONSUMER_KEY12 = "";
-    
-    public static final String CONSUMER_SECRET13 = "";
-    public static final String CONSUMER_KEY13 = "";
-    
-    public static final String CONSUMER_SECRET14 = "";
-    public static final String CONSUMER_KEY14 = "";
-    
-    public static final String CONSUMER_SECRET15 = "";
-    public static final String CONSUMER_KEY15 = "";*/
+  
    
 }
