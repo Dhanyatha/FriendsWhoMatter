@@ -1,4 +1,4 @@
-ProjectMickey
+Friends Who Matter
 =============
 This project is based on the research paper titled "Social Networks that matter". The research paper states that even though
 users declare a lot of friends on twitter, they often make regular conversations with limited number of friends. These 
@@ -12,7 +12,9 @@ by using visual representations like graphs & histograms(exploratory data analys
 in the research paper,"Social Networks that matter".
 
 
-Project -Part 1
+Project -Part 1 (Available in this repository)
 Data Gathering phase- written in Java
-Data Analysis- done in Matlab
+
+Project -Part 2
+Data Analysis in Matlab
   
